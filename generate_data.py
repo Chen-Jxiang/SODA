@@ -10,7 +10,7 @@ n_features = 20
 n_id = 100
 n_class = 5
 
-# Generate classes and features
+# Randomly generate classes and features.
 
 class_ii = np.zeros([n_id, n_class], int)
 
@@ -37,6 +37,7 @@ for cc in range(n_class):
 missing = np.array(np.random.binomial(1, .1, size = [n_id, n_class]), bool)
 class_ii[missing] = -1
 
+# Save to the file cluster.csv
 
 f = open("cluster.csv", "w")
 
@@ -51,6 +52,8 @@ for ii in range(n_id):
     f.write("\n")
 
 f.close()
+
+# Save to the file data.csv
 
 f = open("data.csv", "w")
 
