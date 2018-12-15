@@ -31,7 +31,13 @@ We provide an example that anaylyzes the synthetic data with SODA code:
 
 ```python
 import disease_axis
-M = disease_axis.disease_axis("data.csv", "cluster.csv", savefig = False)
+
+#Generate the disease axes and save the figures
+M = disease_axis.disease_axis("data.csv", "cluster.csv", savefig = True)
+
+M.output_projection("projection.csv") # Output the projection matrix.
+M.output_axes("axes.csv") # Output the disease axes.
+
 ```
 
 
