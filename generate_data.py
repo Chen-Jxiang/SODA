@@ -10,6 +10,8 @@ n_features = 20
 n_id = 100
 n_class = 5
 
+# Generate classes and features
+
 class_ii = np.zeros([n_id, n_class], int)
 
 class_ii[:, :n_class - 1] = 1 + np.random.choice(2, [n_id, n_class - 1], p = [.3, .7])
@@ -30,6 +32,12 @@ for cc in range(n_class):
             np.random.multivariate_normal(mu, Sigma, size = n_cccc)
         
 
+# Randomly generate missing labels
+
+missing = np.array(np.random.binomial(1, .1, size = [n_id, n_class]), bool)
+class_ii[missing] = -1
+
+
 f = open("cluster.csv", "w")
 
 header = "id" + (",Cluster{}" * n_class).format(
@@ -39,7 +47,7 @@ header = "id" + (",Cluster{}" * n_class).format(
 f.write(header)
 for ii in range(n_id):
     f.write("XX{0:06d}".format(ii + 1))
-    f.write( (",{}" * n_class).format(*class_ii[ii, :]) )
+    f.write( ( (",{}" * n_class).format(*class_ii[ii, :]) ).replace("-1", "NA"))
     f.write("\n")
 
 f.close()

@@ -34,8 +34,9 @@ as follows:
 
 import disease_axis
 
-#Generate the disease axes
-M = disease_axis.disease_axis("data.csv", "cluster.csv", True)
+#Generate the disease axes and save the figures
+M = disease_axis.disease_axis("data.csv", "cluster.csv", savefig = True)
+
 M.output_projection("projection.csv") # Output the projection matrix.
 M.output_axes("axes.csv") # Output the disease axes.
 
@@ -161,8 +162,7 @@ class disease_axis:
                         
                         self.plot_violin( 
                             LR_x, LR_y, len(self.axes_coef) - 1, filename)
-                        
-                        plt.show()                    
+        plt.show()                    
 
     
     def plot_violin(self, x, y, axes_idx, filename = None):
