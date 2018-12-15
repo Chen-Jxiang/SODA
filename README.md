@@ -1,5 +1,5 @@
 # SODA
-This project aims to automatically identify the Subtype-Oriented Disease Axes (SODA) given the features and multiple labels. It generate the projections of the given features (i.e., the disease axes) that optimally separate the pairwise comparison betweenthe given labels. THe code is included in disease_axis.py.
+This project aims to automatically identify the Subtype-Oriented Disease Axes (SODA) given the features and multiple labels. It generate the projections of the given features (i.e., the disease axes) that optimally separate the pairwise comparison betweenthe given labels. The code is included in disease_axis.py.
 
 ## Toy Data
 We generate some toy data to demonstrate the results of provided the code provided. The toy data is generated via generate_data.py.
