@@ -8,16 +8,16 @@ The toy data contains 2 files: data.csv and cluster.csv
 
 data.csv contains the patient data. The file is separated with commas. The format of the file is provided as follows:
     
-id,     feature_name1,  feature_name2,  feature_name3,     ... # header
-XX0001,     -0.94,          -0.14,          -0.91,         ...
-XX0002,     0.77,           0.306           0.86           ...
+id,     feature_name1,  feature_name2,  feature_name3,     ... # header \n
+XX0001,     -0.94,          -0.14,          -0.91,         ... \n
+XX0002,     0.77,           0.306           0.86           ... \n
 ...
 
 cluster.csv contains the patient data. The file is separated with commas. The labels is represeted using integers. "NA" represents that the data is not available. The format of this file is provided as follows:
     
-id,         label_name1,    label_name2,    label_name3, ... # header
-XX0001,         1,              2,              NA,
-XX0002,         0,              2,              0,
+id,         label_name1,    label_name2,    label_name3, ... # header \n
+XX0001,         1,              2,              NA, \n
+XX0002,         0,              2,              0, \n
 ...
     
 
@@ -26,8 +26,21 @@ The patients involved in both files are not necessarilly to be the same. The pac
 # Analyzing the Toy Data
 
 We provide an example that anaylyzes the synthetic data with SODA code:
+{
+ "cell_type": "code",
+ "collapsed": true,
+ "input": [
+  "import disease_axis\n",
+  "M = disease_axis.disease_axis("data.csv", "cluster.csv", savefig = False)"
+ ],
+ "language": "python",
+ "metadata": {},
+ "outputs": [],
+ "prompt_number": 1
+},
 
-import disease_axis
-M = disease_axis.disease_axis("data.csv", "cluster.csv", savefig = False)
+
+
+
 
 
