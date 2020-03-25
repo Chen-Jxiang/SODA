@@ -257,7 +257,7 @@ class disease_axis:
             x = ( x - self.x_shift ) / self.x_scale
         
         #Compute the disease axes.
-        axes = np.zeros([len(self.id), len(self.axes_name)])
+        axes = np.zeros([x.shape[0], len(self.axes_name)])
         
         for ii in range(len(self.axes_name)):
             axes[:, ii] = np.dot(self.axes_coef[ii], x.T)
